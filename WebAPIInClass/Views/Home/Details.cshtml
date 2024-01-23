@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+        $(document).ready(function () {
+            $.ajax({
+                method: 'GET',
+                url: 'http://localhost:61022/api/values/' + @ViewBag.EmployeeId,
+                contentType: 'json',
+                cache:false,
+                success: function (item) {
+                    
+                        alert(item.EmpId + " " + item.EmpName + " " + item.Salary);
+                    
+                }
+            })
+        })
+</script>
+
